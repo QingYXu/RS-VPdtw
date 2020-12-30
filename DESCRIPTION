@@ -1,0 +1,12 @@
+Package: RSVPdtw
+Type: Package
+Title: Raman standardization based on Variable Penalty dynamic time warping 
+Version: 4.0.2
+Author: Qingyu.Xu,Zhimin Zhang
+Maintainer: Qingyu.Xu<Qingyu.Xu@csu.cn>
+Description: Raman standardization based on Variable Penalty dynamic time warping for eliminate 
+Depends: R (>= 3.0.0), VPdtw, airPLS
+License: LGPL version 2 or newer
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1

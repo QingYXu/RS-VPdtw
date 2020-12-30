@@ -1,0 +1,7 @@
+{
+    "installOptions": {
+        "installFromRepository": true,
+        "libraryPath": "D:/google/Rsoft/R-4.0.2/library",
+        "installDependencies": true
+    }
+}
