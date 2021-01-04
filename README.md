@@ -1,9 +1,9 @@
 # RS-VPdtw
 A rapid algorithm for Spectral standardization via Variable Penalty dynamic time warping for Raman spectroscopy. The programming language is R(http://www.r-project.org/).
-![image](https://github.com/QingYXu/RS-VPdtw/raw/master/fig.png)
+![image](https://github.com/QingYXu/RS-VPdtw/Raw/master/fig.png)
 # Installation
 # Depend:
-'''R
+'''r
 install Rtools(https://cran.r-project.org/bin/windows/Rtools/);
 install.packages("devtools");
 library(devtools); 
@@ -11,7 +11,7 @@ install_github("zmzhang/airPLS_R")
 devtools::install_github("david-clifford/VPdtw")
 '''
 # Intall using devtools from github:
-'''R
+'''r
 install_github("QingYXu/RS-VPdtw")
 '''
 # Example:
