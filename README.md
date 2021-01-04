@@ -1,2 +1,22 @@
-<P># RS-VPdtw<BR>Raman spectroscopy can provide the structural fingerprints to identify molecules by means of spectral library searching.&nbsp; We propose a Raman spectra Standardization method using Variable Penalty dynamic time warping (RS-VPdtw), which can synchronize the nonlinear displacement between spectra acquired by different spectrometers.</P>
-<P><A href="http://album.sina.com.cn/pic/003wBohKzy7Jjvg0bs75b" target=_blank><IMG id=image_operate_32691609765622302 src="http://s12.sinaimg.cn/mw690/003wBohKzy7Jjvg0bs75b&amp;690" width=431 height=457></A><BR><BR><BR># Installation<BR>## R version<BR>Install R 4.0.2 or higher in you computer.<BR>## Depend:<BR>```r<BR>install Rtools(<A href="https://cran.r-project.org/bin/windows/Rtools/">https://cran.r-project.org/bin/windows/Rtools/</A>);<BR>install.packages("devtools");<BR>library(devtools); <BR>install_github("zmzhang/airPLS_R")<BR>devtools::install_github("david-clifford/VPdtw")<BR>```<BR>## Intall using devtools from github:<BR>```r<BR>install_github("QingYXu/RS-VPdtw")<BR>```<BR># Example:<BR>Then load the package through library(RS-VPdtw) in the R commandline windows, try ?RS-VPdtw in the R commandline windows to open the documents.<BR>See/example/RSVPdtw.r<BR># Contact<BR><A href="mailto:zhangzhimin.csu@gmail.com">zhangzhimin.csu@gmail.com</A> or:182311013@csu.edu.cn<BR><BR><BR></P>
+# RS-VPdtw
+Raman spectroscopy can provide the structural fingerprints to identify molecules by means of spectral library searching.  We propose a Raman spectra Standardization method using Variable Penalty dynamic time warping (RS-VPdtw), which can synchronize the nonlinear displacement between spectra acquired by different spectrometers.
+# Installation
+## R version
+Install R 4.0.2 or higher in you computer.
+## Depend:
+```r
+install Rtools(https://cran.r-project.org/bin/windows/Rtools/);
+install.packages("devtools");
+library(devtools); 
+install_github("zmzhang/airPLS_R")
+devtools::install_github("david-clifford/VPdtw")
+```
+## Intall using devtools from github:
+```r
+install_github("QingYXu/RS-VPdtw")
+```
+# Example:
+Then load the package through library(RS-VPdtw) in the R commandline windows, try ?RS-VPdtw in the R commandline windows to open the documents.
+See/example/RSVPdtw.r
+# Contact
+zhangzhimin.csu@gmail.com or:182311013@csu.edu.cn
