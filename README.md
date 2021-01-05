@@ -1,5 +1,6 @@
 # RS-VPdtw
 Raman spectroscopy can provide the structural fingerprints to identify molecules by means of spectral library searching.  We propose a Raman spectra Standardization method using Variable Penalty dynamic time warping (RS-VPdtw), which can synchronize the nonlinear displacement between spectra acquired by different spectrometers.
+![image](https://github.com/QingYXu/RS-VPdtw/blob/master/fig.png)
 # Installation
 ## R version
 Install R 4.0.2 or higher in you computer.
