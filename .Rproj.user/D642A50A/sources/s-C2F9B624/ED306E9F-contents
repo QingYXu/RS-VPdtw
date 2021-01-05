@@ -1,0 +1,46 @@
+setwd('D:/StdVpdtw')
+
+rs_min=300
+rs_max=3000
+
+ref_df  =  read.csv(file = 'ref-i/氯霉素-6000ms.txt', header = FALSE)
+ref_rs = as.vector(unlist(ref_df['V1']))
+ref_in = as.vector(unlist(ref_df['V2']))
+
+ref_in=ref_in[ref_rs>rs_min & ref_rs<rs_max]
+ref_rs=ref_rs[ref_rs>rs_min & ref_rs<rs_max]
+
+b=airPLS(ref_in,10e8,4,0.8)
+ref_in_bc =ref_in - b
+ref_in_bc13 = ref_in_bc - min(ref_in_bc)
+
+query_df  =  read.csv(file = 'query-i/氯霉素-5000ms.txt', header = FALSE)
+query_rs = as.vector(unlist(query_df['V1']))
+query_in = as.vector(unlist(query_df['V2']))
+
+query_in=ref_in[ref_rs>rs_min & ref_rs<rs_max]
+query_rs=ref_rs[ref_rs>rs_min & ref_rs<rs_max]
+
+c=airPLS(query_in,10e8,4,0.8)
+query_in_bc =query_in - c
+query_in_bc13 = query_in_bc - min(query_in_bc)
+
+link <- function(x,y,s)
+  {x1 <- query_rs[1:1000]
+   s1 <- result$shift[1:1000]
+   x2 <- query_rs[1001:1600]
+   s2 <- c(0,rep(0,599))
+   x <- c(x1,x2)
+   s <- c(s1,s2)
+   y <- x + s
+return(c(y))}
+
+q <- link(x <- query_rs,s <- result$shift)
+
+
+query_interp = approx(query_rs,query_in_bc13, q, yleft=0, yright=0)$y
+
+x <- ref_in_bc13[1:1600]
+y <- query_interp[1:1600]
+
+cor.test(x,y)

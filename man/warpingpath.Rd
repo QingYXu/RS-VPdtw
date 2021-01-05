@@ -16,13 +16,10 @@ s is the warping path
 Title warping path of Raman standardization
 }
 \examples{
-data(pretreat)
+data(iRaman)
 x = ref_in
 pretreated <- x - airPLS(x,10e7,4,0.8)
-data(ref)
-data(query)
-e = 6
-d = 8
+data(iRaman)
 x = ref_in_bc
 y = query_in_bc
 s <- warpingpath(x,y,8,6,8)
