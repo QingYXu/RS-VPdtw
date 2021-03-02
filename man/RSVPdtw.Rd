@@ -18,15 +18,11 @@ q is result of warped
 Title Process of Raman standardization
 }
 \examples{
-data(iRaman)
-rs_min=300
-rs_max=3000
-m <- query_rs
-query_rs=query_rs[query_rs>rs_min & query_rs<rs_max]
+data(F900)
+m <-  c(1:1573)
 q <- RSVPdtw(m,s)
-query_in_bc=query_rs[query_rs>rs_min & query_rs<rs_max]
-query_interp = approx(query_rs,query_in_bc15, q, yleft=0, yright=0)$y
-x <- ref_in_bc15[1:1600]
-y <- query_interp[1:1600]
+s <- s$s1
+x <- reference1[1:1500]
+y <- query1[1:1500]
 cor.test(x,y)
 }

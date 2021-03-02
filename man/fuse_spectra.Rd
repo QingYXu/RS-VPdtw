@@ -16,7 +16,7 @@ s is a vector
 Title Vector sum
 }
 \examples{
-data(iRaman)
-x <- cbind(y1,y2,y3,y4,y5,y6)
+data(F900)
+x <- cbind(query1,query2,query3,query4,query5,query6)
 s <- fuse_spectra(x)
 }

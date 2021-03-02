@@ -7,12 +7,12 @@
 #' @export
 #' @import "VPdtw"
 #' @examples
-#' data(iRaman)
-#' x = ref_in
-#' pretreated <- x - airPLS(x,10e7,4,0.8)
-#' data(iRaman)
-#' x = ref_in_bc
-#' y = query_in_bc
+#' data(F900)
+#' x = reference1
+#' pretreated <- x - airPLS(x,10e9,4,0.8)
+#' data(F900)
+#' x = reference1
+#' y = query1
 #' s <- warpingpath(x,y,8,6,8)
 warpingpath <- function (x,y,d,e,maxshift)
 {
