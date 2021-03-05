@@ -1,0 +1,55 @@
+setwd('D:/StdVpdtw')
+
+rs_min=300
+rs_max=3000
+
+ref_df  =  read.csv(file = 'ref-i/?Ҵ?-13000ms.txt', header = FALSE)
+ref_rs = as.vector(unlist(ref_df['V1']))
+ref_in = as.vector(unlist(ref_df['V2']))
+
+ref_in=ref_in[ref_rs>rs_min & ref_rs<rs_max]
+ref_rs=ref_rs[ref_rs>rs_min & ref_rs<rs_max]
+
+
+b=airPLS(ref_in,10e7,4,0.8)
+ref_in_bc =ref_in - b
+reference = ref_in_bc - min(ref_in_bc)
+
+
+query_df  =  read.csv(file = 'query-i/?Ҵ?-1500ms.txt', header = FALSE)
+query_rs = as.vector(unlist(query_df['V1']))
+query_in = as.vector(unlist(query_df['V2']))
+
+
+query_interp = approx(query_rs,query_in, ref_rs, yleft=0, yright=0)$y
+
+c=airPLS(query_interp,10e7,4,0.8)
+query_in_bc = query_interp - c
+query = query_in_bc - min(query_in_bc)
+
+#xIndices
+RSVPdtw <- function(m,s)
+{
+  
+  #s1 <- s[1:1000]
+  #s2 <- c(0,rep(0,length(m)-1001))
+  
+  #s <- c(s1,s2)
+  q <- m - s #shift <- xVals - xIndices
+  return(c(q))
+}
+m <- c(1:1573)
+s <- read.csv(file = 's.csv', header = FALSE)
+s = as.vector(unlist(s['V1']))
+#s <-result$shift
+
+q <- RSVPdtw(m,s)
+
+#query <- floor(q)
+warpedquery <- query[q] #query[xIndices]
+
+x <- reference[1:1500]
+y <- warpedquery[1:1500]
+
+cor.test(x,y)
+cor.test(reference[1:1500],query[1:1500])

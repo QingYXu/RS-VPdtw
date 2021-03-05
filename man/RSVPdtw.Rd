@@ -20,9 +20,10 @@ Title Process of Raman standardization
 \examples{
 data(F900)
 m <-  c(1:1573)
-q <- RSVPdtw(m,s)
 s <- s$s1
+q <- RSVPdtw(m,s)
+warpedquery <- query1[q]
 x <- reference1[1:1500]
-y <- query1[1:1500]
+y <- warpedquery[1:1500]
 cor.test(x,y)
 }
